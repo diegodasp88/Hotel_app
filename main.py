@@ -283,7 +283,7 @@ def main(page: ft.Page):
         """Atualizar tabela de clientes"""
         if clients_table_ref.current:
             clients_table_ref.current.controls.clear()
-            clients_table_ref.current.controls.append(show_all_clients_data())
+            clients_table_ref.current.controls.append(show_all_clients_data(e))
             clients_table_ref.current.update()
        
     def update_client(e):
