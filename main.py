@@ -283,7 +283,7 @@ def main(page: ft.Page):
         """Atualizar tabela de clientes"""
         if clients_table_ref.current:
             clients_table_ref.current.controls.clear()
-            clients_table_ref.current.controls.append(show_all_clients_data(e))
+            clients_table_ref.current.controls.append(show_all_clients_data(None))
             clients_table_ref.current.update()
        
     def update_client(e):
@@ -505,7 +505,7 @@ def main(page: ft.Page):
         content=ft.Text("Você realmente deseja excluir essa reserva?"),
         actions=[
             text_buttons.yes_button(on_click=remove_reserv_data_by_id),
-            text_buttons.no_button(on_click=lambda e: page.close(confirm_removal))
+            text_buttons.no_button(on_click=lambda e: page.close(confirm_reserv_removal))
     ])
     
     success_submit = alert_dialogs.alert_success(
